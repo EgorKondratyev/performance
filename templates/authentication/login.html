@@ -9,6 +9,7 @@
 <body>
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
+    {{ form.non_field_errors }}
 
     <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
     {{ form.username }}  {# class='username_login' #}
