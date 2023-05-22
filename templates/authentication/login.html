@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+
+    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+    {{ form.username }}  {# class='username_login' #}
+    {{ form.username.errors }}
+
+    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+    {{ form.password }}  {# class='password_login' #}
+    {{ form.password.errors }}
+
+    <button type="submit">Авторизоваться</button>
+</form>
+</body>
+</html>
