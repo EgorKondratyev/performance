@@ -7,6 +7,11 @@
     {% endblock %}
 </head>
 <body>
+{% for element_sidebar in sidebar %}
+    <div>
+    <a href="{% url element_sidebar.name_url %}">{{ element_sidebar.title }}</a>
+    </div>
+{% endfor %}
 {% block content %}
 {% endblock %}
 </body>
