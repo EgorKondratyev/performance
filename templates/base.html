@@ -12,6 +12,12 @@
     <a href="{% url element_sidebar.name_url %}">{{ element_sidebar.title }}</a>
     </div>
 {% endfor %}
+Дополнительный sidebar:
+{% for element_additional_sidebar in additional_sidebar %}
+    <div>
+    <a href="{{ element_additional_sidebar.url }}">{{ element_additional_sidebar.title }}</a>
+    </div>
+{% endfor %}
 {% block content %}
 {% endblock %}
 </body>
