@@ -5,9 +5,14 @@ from django.urls import reverse
 
 
 class Speciality(models.Model):
-    title = models.CharField(
+    name = models.CharField(
         max_length=128,
         verbose_name='Название',
+        unique=True
+    )
+    abbreviated_name = models.CharField(
+        max_length=7,
+        verbose_name='Сокращенное название',
         unique=True
     )
     qualification = models.CharField(
@@ -35,6 +40,9 @@ class Speciality(models.Model):
         verbose_name = 'специальность'
         verbose_name_plural = 'специальности'
 
+    def __str__(self):
+        return self.title
+
 
 class Subjects(models.Model):
     name = models.CharField(
@@ -48,16 +56,6 @@ class Subjects(models.Model):
 
 
 class Groups(models.Model):
-    abbreviated_name = models.CharField(
-        max_length=7,
-        verbose_name='Сокращенное название',
-        unique=True
-    )
-    name = models.CharField(
-        max_length=128,
-        verbose_name='Название',
-        unique=True
-    )
     form_of_education_choices = (
         ('correspondence_abbreviated', 'Заочная сокращенная'),
         ('correspondence', 'Заочная'),
