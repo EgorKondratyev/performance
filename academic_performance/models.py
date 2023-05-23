@@ -54,6 +54,9 @@ class Subjects(models.Model):
         verbose_name = 'предмет'
         verbose_name_plural = 'предметы'
 
+    def __str__(self):
+        return self.name
+
 
 class Groups(models.Model):
     form_of_education_choices = (

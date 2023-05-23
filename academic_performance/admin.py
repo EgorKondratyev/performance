@@ -23,7 +23,22 @@ class SpecialityAdmin(admin.ModelAdmin):
 
 @admin.register(Subjects)
 class SubjectsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['pk', 'name', 'amount_subject_in_group']
+    list_display_links = ['pk', 'name']
+    search_fields = ['name']
+
+    @admin.display(description='Количество групп, изучающих текущий предмет')
+    def amount_subject_in_group(self, field):
+        amount_groups = field.groups.count()
+        if amount_groups == 0:
+            return 'На данный момент никто не изучает текущий предмет'
+        return {amount_groups}
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
 
 
 @admin.register(Students)
