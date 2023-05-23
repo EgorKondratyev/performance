@@ -23,7 +23,7 @@ class Speciality(models.Model):
         default=1,
         validators=[
             MinValueValidator(1),
-            MaxValueValidator(4)
+            MaxValueValidator(6)
         ],
         verbose_name='Период обучения'
     )
@@ -41,7 +41,7 @@ class Speciality(models.Model):
         verbose_name_plural = 'специальности'
 
     def __str__(self):
-        return self.title
+        return self.abbreviated_name
 
 
 class Subjects(models.Model):
@@ -67,6 +67,14 @@ class Groups(models.Model):
         default='full_time',
         verbose_name='Форма обучения'
     )
+    course = models.IntegerField(
+        default=1,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(6)
+        ],
+        verbose_name='Курс (стадия обучения)'
+    )
     speciality = models.ForeignKey(
         Speciality,
         on_delete=models.PROTECT,
@@ -84,7 +92,7 @@ class Groups(models.Model):
         verbose_name_plural = 'группы'
 
     def __str__(self):
-        return self.abbreviated_name
+        return self.speciality.abbreviated_name
 
 
 class Students(models.Model):
