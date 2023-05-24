@@ -4,6 +4,7 @@ from django.contrib.auth.models import Group, User
 from main.models import Speciality, Subjects, Students, Groups
 
 
+admin.site.site_header = 'Успеваемость и отработки'
 admin.site.unregister(User)
 admin.site.unregister(Group)
 
