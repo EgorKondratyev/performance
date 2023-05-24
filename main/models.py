@@ -6,8 +6,7 @@ from django.db import models
 class Speciality(models.Model):
     name = models.CharField(
         max_length=128,
-        verbose_name='Название',
-        unique=True
+        verbose_name='Название'
     )
     abbreviated_name = models.CharField(
         max_length=7,
@@ -94,7 +93,7 @@ class Groups(models.Model):
         verbose_name_plural = 'группы'
 
     def __str__(self):
-        return self.speciality.abbreviated_name
+        return f'{self.speciality.abbreviated_name}-{self.course}'
 
 
 class Students(models.Model):

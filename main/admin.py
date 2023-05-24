@@ -17,7 +17,7 @@ class SpecialityAdmin(admin.ModelAdmin):
 
     @admin.display(description='Название')
     def get_abbreviated_name(self, field):
-        return field.abbreviated_name
+        return f'{field.abbreviated_name}'
 
     def get_actions(self, request):
         actions = super().get_actions(request)
@@ -48,7 +48,34 @@ class SubjectsAdmin(admin.ModelAdmin):
 
 @admin.register(Students)
 class StudentsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['pk', 'get_full_name', 'city', 'group']
+    list_display_links = ['pk', 'get_full_name']
+    search_fields = ['middle_name', 'first_name', 'last_name']
+    search_help_text = 'Поиск происходит по имени, фамилии И/ИЛИ отчеству'
+    readonly_fields = ['get_user_id', 'get_full_name']
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('first_name', 'middle_name', 'group')
+        }),
+        ('Дополнительная информация', {
+            'classes': ('collapse', ),
+            'fields': ('get_user_id', 'get_full_name', 'city', 'description',)
+        })
+    )
+
+    @admin.display(description='ID')
+    def get_user_id(self, field):
+        return field.pk
+
+    @admin.display(description='ФИО')
+    def get_full_name(self, field):
+        return f'{field.middle_name} {field.first_name} {field.last_name}'
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
 
 
 @admin.register(Groups)
@@ -58,7 +85,7 @@ class GroupsAdmin(admin.ModelAdmin):
 
     @admin.display(description='Специальность')
     def get_speciality(self, field):
-        return field.speciality.abbreviated_name
+        return f'{field.speciality.abbreviated_name}-{field.course}'
 
     @admin.display(description='Изучаемых предметов')
     def get_amount_subjects(self, field):
