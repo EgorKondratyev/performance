@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'authentication/css/auth.css' %}">
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'authentication/css/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
 </head>
-<body>
-<form action="{% url 'login' %}" method="post">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
 
-    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
-    {{ form.username }}  {# class='username_login' #}
-    {{ form.username.errors }}
-
-    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
-    {{ form.password }}  {# class='password_login' #}
-    {{ form.password.errors }}
-
-    <button type="submit">Авторизоваться</button>
-</form>
 </body>
+
+</html>
+
+<body>
+  <div class="wrapper">
+    <div class="login__block">
+      <div class="login__body">
+        <div class="login__uptitle"><span>CONTACT US</span></div>
+        <div class="login__title">Contact For Any Query</div>
+        <div class="login__content">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2278.2900158028397!2d30.232602376676684!3d55.17819677287693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c57146d84e92c5%3A0xebf903f6b2658c6!2z0JLQuNGC0LXQsdGB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2sby!4v1685002818746!5m2!1sru!2sby"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <form action="{% url 'login' %}" method="post" class="login__form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <label for="{{ form.username.id_for_label }}" class="login__label">{{ form.username.label }}</label>
+            <div class="login__input">{{ form.username }} {# class='username_login' #}</div>
+            {{ form.username.errors }}
+
+            <label for="{{ form.password.id_for_label }}" class="login__label">{{ form.password.label }}</label>
+            <div class="login__input">{{ form.password }} {# class='password_login' #}</div>
+            {{ form.password.errors }}
+
+            <button type="submit" class="login__btn btn">Авторизоваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
 </html>

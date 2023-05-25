@@ -1,3 +1,138 @@
-.content {
-    display: flex;
+@import "nullstyle.scss";
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.btn {
+    position: relative;
+    color: #fff;
+    background-color: #06BBCC;
+    padding: 6px 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #fff;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        border: 2px solid rgba(0, 0, 0, 0.0);
+        transition: 0.4s;
+    }
+
+    &:hover::before {
+        border-color: #06BBCC;
+        width: calc(100% - 40px);
+        height: calc(100% + 20px);
+    }
+}
+
+.login {
+    &__block {}
+
+    &__body {
+        min-height: 100vh;
+    }
+
+    &__uptitle {
+        position: relative;
+        color: #06BBCC;
+        min-height: 10vh;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 120%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+
+        span {
+            display: inline-block;
+            width: 140px;
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            z-index: -1;
+
+            background-color: #06BBCC;
+            transform: translate(-50%, 0);
+        }
+
+        &::before {
+            bottom: 13px;
+            width: 200px;
+            height: 1px;
+        }
+
+        &::after {
+            bottom: 7px;
+            width: 250px;
+            height: 2px;
+        }
+    }
+
+    &__title {
+        color: #181d38;
+        min-height: 10vh;
+        margin: 0px 0px 20px 0px;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    .iframe {
+        flex: 1 1 1/3*100%;
+    }
+
+    &__form {
+        flex: 1 1 1/3*100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__label {
+        color: #181d38;
+        margin: 0px 0px 10px 0px;
+        font-size: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        max-width: 400px;
+
+        input {
+            width: 100%;
+            min-height: 58px;
+            margin: 0px 0px 30px 0px;
+            border: 1px solid #ced4da;
+        }
+    }
+
+    &__btn {}
 }

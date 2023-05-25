@@ -1,5 +1,245 @@
-.content {
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.btn {
+  position: relative;
+  color: #fff;
+  background-color: #06BBCC;
+  padding: 6px 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid #fff;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.btn:hover::before {
+  border-color: #06BBCC;
+  width: calc(100% - 40px);
+  height: calc(100% + 20px);
+}
+
+.login__body {
+  min-height: 100vh;
+}
+.login__uptitle {
+  position: relative;
+  color: #06BBCC;
+  min-height: 10vh;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 120%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.login__uptitle span {
+  display: inline-block;
+  width: 140px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  text-align: center;
+}
+.login__uptitle::before, .login__uptitle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  background-color: #06BBCC;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.login__uptitle::before {
+  bottom: 13px;
+  width: 200px;
+  height: 1px;
+}
+.login__uptitle::after {
+  bottom: 7px;
+  width: 250px;
+  height: 2px;
+}
+.login__title {
+  color: #181d38;
+  min-height: 10vh;
+  margin: 0px 0px 20px 0px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+.login__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.login .iframe {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.3333333333%;
+          flex: 1 1 33.3333333333%;
+}
+.login__form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.3333333333%;
+          flex: 1 1 33.3333333333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.login__label {
+  color: #181d38;
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
+}
+.login__input {
+  width: 100%;
+  max-width: 400px;
+}
+.login__input input {
+  width: 100%;
+  min-height: 58px;
+  margin: 0px 0px 30px 0px;
+  border: 1px solid #ced4da;
 }
