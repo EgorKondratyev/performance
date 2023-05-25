@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     {% block extrastyle %}
     {% endblock %}
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-{% for element_sidebar in sidebar %}
-    <div>
-    <a href="{% url element_sidebar.name_url %}">{{ element_sidebar.title }}</a>
+    <div class="wrapper">
+        <div class="header__block">
+            <div class="header__body">
+                <nav class="header__menu">
+                    <div class="header__logo">Logo</div>
+                    <ul class="header__list">
+                        {% for element_sidebar in sidebar %}
+                        <li class="header__item">
+                            <a href="{% url element_sidebar.name_url %}" class="header__link">{{element_sidebar.title}}
+                            </a>
+                        </li>
+                        {% endfor %}
+                        <li class="header__item header__item-sublist">More
+                            <ul class="header__sublist">
+                                {% for element_additional_sidebar in additional_sidebar %}
+                                <li class="header__subitem">
+                                    <a href="{{ element_additional_sidebar.url }}" class="header__sublink">{{element_additional_sidebar.title}}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="header__burger"><span></span></div>
+                </nav>
+            </div>
+        </div>
+        Дополнительный sidebar:
+        {#Можно сделать как дополнительное выпадающие меню в сайдбаре#}
+
+        {% block content %}
+        {% endblock %}
+        <div class="content__block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, a? Qui, sint
+            accusantium? Aliquid corrupti
+            numquam maiores et sapiente consequuntur facere perspiciatis cum, voluptatem impedit quod temporibus optio
+            ullam ratione ipsum, esse tenetur doloremque voluptas excepturi? Aperiam, rerum ratione! Odio!
+        </div>
     </div>
-{% endfor %}
-Дополнительный sidebar:
-{#Можно сделать как дополнительное выпадающие меню в сайдбаре#}
-{% for element_additional_sidebar in additional_sidebar %}
-    <div>
-    <a href="{{ element_additional_sidebar.url }}">{{ element_additional_sidebar.title }}</a>
-    </div>
-{% endfor %}
-{% block content %}
-{% endblock %}
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
