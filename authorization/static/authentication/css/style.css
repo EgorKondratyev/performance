@@ -113,7 +113,6 @@ input[type=number] {
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
-  border: 2px solid #fff;
 }
 .btn::before {
   content: "";
@@ -132,7 +131,7 @@ input[type=number] {
 .btn:hover::before {
   border-color: #06BBCC;
   width: calc(100% - 40px);
-  height: calc(100% + 20px);
+  height: calc(100% + 10px);
 }
 
 .login__body {
@@ -204,16 +203,39 @@ input[type=number] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 5vw;
 }
-.login .iframe {
+.login__someinf {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.3333333333%;
-          flex: 1 1 33.3333333333%;
+      -ms-flex: 1 1 35%;
+          flex: 1 1 35%;
+}
+.login__someinf-title {
+  color: #181d38;
+  margin: 0px 0px 20px 0px;
+  font-weight: 500;
+  font-size: 25px;
+}
+.login__someinf-text {
+  color: #181d38;
+  font-size: 20px;
+  line-height: 120%;
+}
+.login__map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  padding: 0 20px;
+}
+.login__map iframe {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
 }
 .login__form {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.3333333333%;
-          flex: 1 1 33.3333333333%;
+      -ms-flex: 1 1 35%;
+          flex: 1 1 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,5 +263,7 @@ input[type=number] {
   width: 100%;
   min-height: 58px;
   margin: 0px 0px 30px 0px;
+  padding: 0px 0px 0px 20px;
   border: 1px solid #ced4da;
+  font-size: 20px;
 }

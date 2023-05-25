@@ -20,10 +20,20 @@
         <div class="login__uptitle"><span>CONTACT US</span></div>
         <div class="login__title">Contact For Any Query</div>
         <div class="login__content">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2278.2900158028397!2d30.232602376676684!3d55.17819677287693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c57146d84e92c5%3A0xebf903f6b2658c6!2z0JLQuNGC0LXQsdGB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2sby!4v1685002818746!5m2!1sru!2sby"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="login__someinf">
+            <div class="login__someinf-title">Lorem, ipsum dolor.</div>
+            <div class="login__someinf-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias iure
+              repellat, dicta ullam aut omnis recusandae provident nisi iste suscipit praesentium nostrum, perferendis
+              consectetur rerum illo aliquam architecto fugit consequuntur.
+            </div>
+          </div>
+          <div class="login__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2278.2900158028397!2d30.232602376676684!3d55.17819677287693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c57146d84e92c5%3A0xebf903f6b2658c6!2z0JLQuNGC0LXQsdGB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2sby!4v1685002818746!5m2!1sru!2sby"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
           <form action="{% url 'login' %}" method="post" class="login__form">
             {% csrf_token %}
             {{ form.non_field_errors }}
