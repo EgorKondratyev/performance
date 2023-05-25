@@ -23,19 +23,19 @@ class BaseMixin:
         additional_sidebar = [
             {
                 'title': 'Добавить специальность',
-                'url': 'http://127.0.0.1:8000/admin/academic_performance/speciality/add/'
+                'url': 'http://127.0.0.1:8000/admin/main/speciality/add/'
             },
             {
                 'title': 'Добавить предмет',
-                'url': 'http://127.0.0.1:8000/admin/academic_performance/subjects/add/'
+                'url': 'http://127.0.0.1:8000/admin/main/subjects/add/'
             },
             {
                 'title': 'Добавить группу',
-                'url': 'http://127.0.0.1:8000/admin/academic_performance/groups/add/'
+                'url': 'http://127.0.0.1:8000/admin/main/groups/add/'
             },
             {
                 'title': 'Добавить студента',
-                'url': 'http://127.0.0.1:8000/admin/academic_performance/students/add/'
+                'url': 'http://127.0.0.1:8000/admin/main/students/add/'
             },
         ]
         return additional_sidebar
