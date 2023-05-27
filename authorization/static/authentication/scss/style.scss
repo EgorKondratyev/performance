@@ -167,10 +167,22 @@
 .header {
 
   &__block {
-    position: fixed;
-    z-index: 50;
-    background-color: #fff;
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    &::before {
+      content: '';
+      background-color: #f9f9f9;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
   }
 
   &__body {
@@ -178,6 +190,7 @@
   }
 
   &__menu {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -185,11 +198,33 @@
 
   &__logo {
     font-size: 22px;
+    padding: 20px 0px;
     font-weight: 500;
+    z-index: 2;
   }
 
   &__list {
     display: flex;
+    z-index: 2;
+
+    @media (max-width: 849px) {
+      position: fixed;
+      display: block;
+      background-color: #fff;
+      top: -100%;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding: 100px 0px 0px 0px;
+      overflow: auto;
+      transition: 0.5s;
+      text-align: center;
+
+      &._active {
+        top: 0;
+      }
+    }
   }
 
   &__item {
@@ -202,7 +237,12 @@
     padding: 20px 0px;
     font-size: 18px;
     font-weight: 500;
+    transition: 0.4s;
     cursor: pointer;
+
+    &:hover {
+      color: #06BBCC;
+    }
   }
 
   &__item {}
@@ -251,11 +291,67 @@
     color: #181d38;
     font-size: 18px;
     font-weight: 500;
+    transition: 0.4s;
     cursor: pointer;
+
+    &:hover {
+      color: #06BBCC;
+    }
   }
 
   &__burger {
     display: none;
+
+    @media (max-width: 849px) {
+      position: relative;
+      display: block;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #181d38;
+        transition: 0.4s;
+      }
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #181d38;
+        top: 50%;
+        left: 0;
+        transition: 0.3s;
+      }
+
+      &::before {
+        top: 5px;
+      }
+
+      &::after {
+        bottom: 5px;
+      }
+    }
+
+    &._active::before {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    &._active::after {
+      bottom: 14px;
+      transform: rotate(-45deg);
+    }
+
+    &._active span {
+      transform: scale(0);
+    }
   }
 }
 
