@@ -1,4 +1,4 @@
-let myRoomSlider = new Swiper('.room__slider', {
+let myRoomSlider = new Swiper('.main__slider', {
 
   navigation: {
     prevEl: '.room__button-prev',
@@ -9,7 +9,6 @@ let myRoomSlider = new Swiper('.room__slider', {
     el: '.room__pagination',
     type: 'fraction',
   },
-  spaceBetween: 32,
   grabCursor: true,
 
   keyboard: {
@@ -18,21 +17,13 @@ let myRoomSlider = new Swiper('.room__slider', {
     pageUpDown: true,
   },
 
-  // autoplay: {
-  //     delay: 2000,
-  // },
-
-  speed: 1000,
-
-  breakpoints: {
-    480: {
-      slidesPerView: 1,
-    },
-    992: {
-      slidesPerView: 2,
-    },
+  autoplay: {
+      delay: 1000,
   },
 
+  speed: 2000,
+  slidesPerView: 1,
+  loop: true,
 });
 
 const burgerMenu = document.querySelector('.header__burger');

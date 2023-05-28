@@ -447,5 +447,28 @@ input[type=number] {
 }
 
 .content__block {
-  padding: 100px 5vw;
+  padding: 50px 5vw;
+}
+
+.main__slider {
+  position: relative;
+  margin: 0 -6% !important;
+}
+.main__slide-img {
+  max-height: 800px;
+}
+.main__slide-img img {
+  width: 100%;
+}
+.main__slider-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  color: #fff;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
 }

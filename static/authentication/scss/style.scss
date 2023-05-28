@@ -357,6 +357,38 @@
 
 .content {
   &__block {
-    padding: 100px 5vw;
+    padding: 50px 5vw;
   }
+}
+
+.main {
+
+  &__slider {
+    position: relative;
+    margin: 0 -6% !important;
+  }
+
+  &__slider-wrapper {}
+
+  &__slide {}
+
+  &__slide-img {
+    max-height: 800px;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__slider-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    color: #fff;
+    transform: translate(-50%, -75%);
+    font-size: 70px;
+    font-weight: 700;
+    text-align: center;
+  }
+
 }
