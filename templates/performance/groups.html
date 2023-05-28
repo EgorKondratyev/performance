@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block extrastyle %}
-    <link rel="stylesheet" type="text/css" href="{% static 'performance/css/style.css' %}">
+
+{% block content %}
+    <div class="content__block">
+        <table>
+            <tr>
+                <td>Название группы</td>
+                <td>Форма обучения</td>
+                <td>Курс</td>
+                <td>Специальность</td>
+                <td>Количество изучаемых предметов</td>
+                <td>Количество студентов в группе</td>
+            </tr>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.speciality.abbreviated_name }}-{{ group.course }}</td>
+                    <td>{{ group.get_form_of_education_display }}</td>
+                    <td>{{ group.course }}</td>
+                    <td>{{ group.speciality }}</td>
+                    <td>{{ group.amount_subjects }}</td>
+                    <td>{{ group.amount_sudents }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
