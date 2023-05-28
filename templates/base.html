@@ -7,7 +7,7 @@
     {% block extrastyle %}
     {% endblock %}
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'performance/swiper/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication/css/style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -41,41 +41,12 @@
             </div>
         </div>
         Дополнительный sidebar:
-        {#Можно сделать как дополнительное выпадающие меню в сайдбаре#}
 
         {% block content %}
         {% endblock %}
-        <div class="content__block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, a? Qui, sint
-            accusantium? Aliquid corrupti
-            numquam maiores et sapiente consequuntur facere perspiciatis cum, voluptatem impedit quod temporibus optio
-            ullam ratione ipsum, esse tenetur doloremque voluptas excepturi? Aperiam, rerum ratione! Odio!
-            <div class="room__slider swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="">
-                            <img src="img/slide_1.jpg" alt="slide_1">
-                        </div>
-                        <div class="room-slider__title">Bedroom</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="">
-                            <img src="img/slide_1.jpg" alt="slide_1">
-                        </div>
-                        <div class="room-slider__title">Bedroom</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="">
-                            <img src="img/slide_1.jpg" alt="slide_1">
-                        </div>
-                        <div class="room-slider__title">Bedroom</div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{% static '../static/authentication/swiper/swiper-bundle.min.js' %}"></script>
-<script src="{% static '../static/authentication/scripts/script.js' %}"></script>
+<script src="{% static 'authentication/scripts/script.js' %}"></script>
 
 </html>
