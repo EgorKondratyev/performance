@@ -186,19 +186,20 @@
   }
 
   &__body {
-    padding: 0 5vw;
+    padding: 0px 5vw;
   }
 
   &__menu {
     position: relative;
     display: flex;
+    min-height: 10vh;
     align-items: center;
     justify-content: space-between;
   }
 
   &__logo {
     font-size: 22px;
-    padding: 20px 0px;
+    
     font-weight: 500;
     z-index: 2;
   }
@@ -357,7 +358,9 @@
 
 .content {
   &__block {
-    padding: 50px 5vw;
+    margin: 10vh 0px 0px 0px;
+    max-height: 90vh;
+    overflow: hidden;
   }
 }
 
@@ -381,11 +384,11 @@
 
   &__slider-title {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     z-index: 2;
     color: #fff;
-    transform: translate(-50%, -75%);
+    transform: translate(-50%);
     font-size: 70px;
     font-weight: 700;
     text-align: center;

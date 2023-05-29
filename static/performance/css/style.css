@@ -285,13 +285,14 @@ input[type=number] {
   z-index: 2;
 }
 .header__body {
-  padding: 0 5vw;
+  padding: 0px 5vw;
 }
 .header__menu {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 10vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -301,7 +302,6 @@ input[type=number] {
 }
 .header__logo {
   font-size: 22px;
-  padding: 20px 0px;
   font-weight: 500;
   z-index: 2;
 }
@@ -447,7 +447,9 @@ input[type=number] {
 }
 
 .content__block {
-  padding: 50px 5vw;
+  margin: 10vh 0px 0px 0px;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 .main__slider {
@@ -462,12 +464,12 @@ input[type=number] {
 }
 .main__slider-title {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   z-index: 2;
   color: #fff;
-  -webkit-transform: translate(-50%, -75%);
-          transform: translate(-50%, -75%);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   font-size: 70px;
   font-weight: 700;
   text-align: center;
