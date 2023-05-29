@@ -1,0 +1,15 @@
+{% load custom %}
+
+{% get_performance_days student subject as performance_days %}
+{% for day in days %}
+    <td>
+        {% if day in performance_days %}
+            {% get_mark student subject day as mark %}
+            <input type="number" name="{{ student.pk }}_{{ day|date:'Y-m-d' }}" value="{{ mark }}" min="0" max="10"
+                   maxlength="2">
+        {% else %}
+            <input type="number" name="{{ student.pk }}_{{ day|date:'Y-m-d' }}" value="-" min="0" max="10"
+                   maxlength="2">
+        {% endif %}
+    </td>
+{% endfor %}
