@@ -56,6 +56,9 @@ class Subjects(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self, group_id):
+        return reverse('performance', kwargs={'group_id': group_id, 'subject_id': self.pk})
+
 
 class Groups(models.Model):
     form_of_education_choices = (
@@ -97,7 +100,7 @@ class Groups(models.Model):
         return f'{self.speciality.abbreviated_name}-{self.course}'
 
     def get_absolute_url(self):
-        return reverse()
+        return reverse('subjects', kwargs={'group_id': self.pk})
 
 
 class Students(models.Model):

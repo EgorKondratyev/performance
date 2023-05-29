@@ -56,7 +56,7 @@ class StudentsAdmin(admin.ModelAdmin):
     readonly_fields = ['get_user_id', 'get_full_name']
     fieldsets = (
         ('Основная информация', {
-            'fields': ('first_name', 'middle_name', 'group')
+            'fields': ('first_name', 'middle_name', 'last_name', 'group')
         }),
         ('Дополнительная информация', {
             'classes': ('collapse', ),

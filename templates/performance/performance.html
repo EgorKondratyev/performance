@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="content__block">
+        <form>
+            <table>
+                <tr>
+                    <th>ФИО</th>
+                    {% for day in days %}
+                        <th>{{ day.day }}</th>
+                    {% endfor %}
+                    <th>Средний балл</th>
+                </tr>
+                {% for student in students %}
+                    <tr>
+                    <td>
+                        {{ student.middle_name }} {{ student.first_name }} {{ student.last_name }}
+                    </td>
+                    {% for day in days %}
+                        <td>
+                            {% if student.performance.date == day %}
+                                <input type="number" name="mark" value="{{ student.performance.mark }}">
+                            {% else %}
+                                <input type="number" name="mark" value="-">
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                    <td>Средний 1</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+{% endblock %}
