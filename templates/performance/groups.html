@@ -5,6 +5,7 @@
     <div class="content__block">
         <table>
             <tr>
+                <td>№</td>
                 <td>Название группы</td>
                 <td>Форма обучения</td>
                 <td>Курс</td>
@@ -14,6 +15,7 @@
             </tr>
             {% for group in groups %}
                 <tr>
+                    <td>{{ forloop.counter }}</td>
                     <td>{{ group.speciality.abbreviated_name }}-{{ group.course }}</td>
                     <td>{{ group.get_form_of_education_display }}</td>
                     <td>{{ group.course }}</td>

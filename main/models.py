@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from django.urls import reverse
 
 
 class Speciality(models.Model):
@@ -94,6 +95,9 @@ class Groups(models.Model):
 
     def __str__(self):
         return f'{self.speciality.abbreviated_name}-{self.course}'
+
+    def get_absolute_url(self):
+        return reverse()
 
 
 class Students(models.Model):
