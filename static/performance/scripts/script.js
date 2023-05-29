@@ -18,7 +18,7 @@ let myRoomSlider = new Swiper('.main__slider', {
   },
 
   autoplay: {
-      delay: 1000,
+    delay: 2000,
   },
 
   speed: 2000,
