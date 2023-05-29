@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content__block">
+        {% for working_out in working_out_all %}
+            Отработка номер: {{ forloop.counter }}
+            <p>
+                ФИО: {{ working_out.student.middle_name }} {{ working_out.student.first_name }} {{ working_out.student.last_name }}
+                <br>
+                Сумма отработки: {{ working_out.amount }} ЗЕЛЕНЫХ ГРИВНЕЙ
+                <br>
+                Дата отработки: {{ working_out.date|date:'d-m-Y' }}
+                <br>
+                Предмет: {{ working_out.subject }}
+            </p>
+            <p>
+                Отработано | Распечатать
+            </p>
+            <br><br><br>
+        {% endfor %}
+    </div>
+{% endblock %}

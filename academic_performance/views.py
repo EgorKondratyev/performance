@@ -9,7 +9,8 @@ from academic_performance.utils import get_days
 from academic_performance.models import AcademicPerformance
 
 
-class GroupsView(BaseMixin, ListView):
+class GroupsView(BaseMixin, LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('login')
     model = Groups
     template_name = 'performance/groups.html'
     context_object_name = 'groups'
@@ -24,7 +25,8 @@ class GroupsView(BaseMixin, ListView):
         return Groups.objects.annotate().all()
 
 
-class SubjectsView(BaseMixin, ListView):
+class SubjectsView(BaseMixin, LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('login')
     model = Subjects
     template_name = 'performance/subjects.html'
     context_object_name = 'subjects'
@@ -40,7 +42,7 @@ class SubjectsView(BaseMixin, ListView):
 
 
 class PerformanceView(BaseMixin, LoginRequiredMixin, View):
-    login_url = reverse_lazy('home')
+    login_url = reverse_lazy('login')
     template_name = 'performance/performance.html'
 
     def get_context_performance(self, request, group_id: int, subject_id: int):

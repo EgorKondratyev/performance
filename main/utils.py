@@ -12,8 +12,7 @@ class BaseMixin:
         sidebar = [
             {'title': 'Главная страница', 'name_url': 'main_page'},
             {'title': 'Успеваемость', 'name_url': 'groups'},
-            {'title': 'Отработки', 'name_url': 'main_page'},
-            {'title': 'Обратная связь', 'name_url': 'main_page'},
+            {'title': 'Отработки', 'name_url': 'work_out'},
             {'title': 'Выход', 'name_url': 'logout'}
         ]
         return sidebar
