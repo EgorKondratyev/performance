@@ -37,5 +37,9 @@ class BaseMixin:
                 'title': 'Добавить студента',
                 'url': 'http://127.0.0.1:8000/admin/main/students/add/'
             },
+            {
+                'title': 'Добавить отработку',
+                'url': 'http://127.0.0.1:8000/admin/working_out/workingout/add/'
+            }
         ]
         return additional_sidebar
