@@ -44,25 +44,26 @@ class PerformanceView(BaseMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('home')
     template_name = 'performance/performance.html'
 
-    def get(self, request, group_id: int, subject_id: int):
+    def get_context_performance(self, request, group_id: int, subject_id: int):
+        year = int(request.GET.get('year', 2023))
+        month = int(request.GET.get('month', 5))
         context = self.get_base_context_data(
             title='Успеваемость студентов',
             group_id=group_id,
             subject=Subjects.objects.get(pk=subject_id),
             students=Students.objects.filter(group_id=group_id).select_related(),
-            days=get_days(2023, 5)
+            days=get_days(year, month),
+            year=year,
+            month=month
         )
+        return context
 
+    def get(self, request, group_id: int, subject_id: int):
+        context = self.get_context_performance(request, group_id, subject_id)
         return render(request, self.template_name, context)
 
     def post(self, request, group_id: int, subject_id: int):
-        context = self.get_base_context_data(
-            title='Успеваемость студентов',
-            group_id=group_id,
-            subject=Subjects.objects.get(pk=subject_id),
-            students=Students.objects.filter(group_id=group_id).select_related(),
-            days=get_days(2023, 5)
-        )
+        context = self.get_context_performance(request, group_id, subject_id)
         for data_about_mark, new_mark in request.POST.items():
             if not new_mark:
                 new_mark = None
