@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authorization.apps.AuthorizationConfig',
     'main.apps.MainConfig',
-    'academic_performance.apps.AcademicPerformanceConfig'
+    'academic_performance.apps.AcademicPerformanceConfig',
+    'working_out.apps.WorkingOutConfig'
 ]
 
 MIDDLEWARE = [
