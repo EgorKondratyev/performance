@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load main %}
 
 {% block content %}
     <div class="content__block">
@@ -24,8 +24,8 @@
                     <td>{{ group.get_form_of_education_display }}</td>
                     <td>{{ group.course }}</td>
                     <td>{{ group.speciality }}</td>
-                    <td>{{ group.amount_subjects }}</td>
-                    <td>{{ group.amount_sudents }}</td>
+                    <td>{% get_amount_subject_in_group group %}</td>
+                    <td>{% get_amount_student_in_group group %}</td>
                 </tr>
             {% endfor %}
         </table>

@@ -22,7 +22,7 @@ class GroupsView(BaseMixin, ListView):
         return context
 
     def get_queryset(self):
-        return Groups.objects.annotate(amount_subjects=Count('subjects'), amount_sudents=Count('students')).all()
+        return Groups.objects.annotate().all()
 
 
 class SubjectsView(BaseMixin, ListView):
