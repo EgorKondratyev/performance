@@ -3,42 +3,44 @@
 {% load month_pagination %}
 
 {% block content %}
-    <div class="content__block">
-        <a href="{% get_absolute_url_subject subject group_id %}?year={{ year|last_year:month }}&month={{ month|last_month }}">
-            Прошлый месяц
-        </a>
-    {% get_month_name month %}
-    <a href="{% get_absolute_url_subject subject group_id %}?year={{ year|feature_year:month }}&month={{ month|feature_month }}">
-        Следующий месяц
-    </a>
-        <form action="{% get_absolute_url_subject subject group_id %}" method="post">
-        {% csrf_token %}
-            <table>
-                <tr>
-                    <th>№</th>
-                    <th>ФИО</th>
-                    {% for day in days %}
-                        <th>{{ day.day }}</th>
-                    {% endfor %}
-                    <th>Средний балл</th>
-                </tr>
-                {% for student in students %}
-                    <tr>
-                    <td>
-                        {{ forloop.counter }}
-                    </td>
-                    <td>
-                        {{ student.middle_name }} {{ student.first_name }} {{ student.last_name }}
-                    </td>
-                        {% dates_marks_students days student subject %}
-                    <td>
-                        {% get_average_mark student subject as average_mark %}
-                        {{ average_mark|floatformat:1 }}
-                    </td>
-                    </tr>
-                {% endfor %}
-            </table>
-        <button type="submit">Сохранить успеваемость</button>
-        </form>
+<div class="content__block">
+  <a class="performance__link"
+    href="{% get_absolute_url_subject subject group_id %}?year={{ year|last_year:month }}&month={{ month|last_month }}">
+    Прошлый месяц
+  </a>
+  {% get_month_name month %}
+  <a class="performance__link"
+    href="{% get_absolute_url_subject subject group_id %}?year={{ year|feature_year:month }}&month={{ month|feature_month }}">
+    Следующий месяц
+  </a>
+  <form class="performance__form" action="{% get_absolute_url_subject subject group_id %}" method="post">
+    {% csrf_token %}
+    <div class="performance__body">
+      <div class="performance__row">
+        <div class="performance__item">№</div>
+        <div class="performance__item">ФИО</div>
+        {% for day in days %}
+        <div class="performance__item">{{ day.day }}</div>
+        {% endfor %}
+        <div class="performance__item">Средний балл</div>
+      </div>
+      {% for student in students %}
+      <div class="performance__row">
+        <div class="performance__item">
+          {{ forloop.counter }}
+        </div>
+        <div class="performance__item">
+          {{ student.middle_name }} {{ student.first_name }} {{ student.last_name }}
+        </div>
+        {% dates_marks_students days student subject %}
+        <div class="performance__item">
+          {% get_average_mark student subject as average_mark %}
+          {{ average_mark|floatformat:1 }}
+        </div>
+      </div>
+      {% endfor %}
     </div>
+    <button type="submit" class="performance__btn btn">Сохранить успеваемость</button>
+  </form>
+</div>
 {% endblock %}

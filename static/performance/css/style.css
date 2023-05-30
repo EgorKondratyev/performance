@@ -109,6 +109,7 @@ input[type=number] {
   position: relative;
   color: #fff;
   background-color: #06BBCC;
+  margin: 0px 0px 10px 0px;
   padding: 6px 40px;
   border-radius: 10px;
   font-size: 16px;
@@ -446,12 +447,6 @@ input[type=number] {
           transform: scale(0);
 }
 
-.content__block {
-  margin: 10vh 0px 0px 0px;
-  max-height: 90vh;
-  overflow: hidden;
-}
-
 .main__slider {
   position: relative;
   margin: 0 -6% !important;
@@ -473,4 +468,94 @@ input[type=number] {
   font-size: 70px;
   font-weight: 700;
   text-align: center;
+}
+
+.content__block {
+  margin: 10vh 0px 0px 0px;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.groups__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.groups__item {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 16.6666666667%;
+          flex: 1 1 16.6666666667%;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #000;
+}
+.groups__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+}
+.groups__item:last-child::before {
+  display: none;
+}
+.groups__link {
+  color: #06BBCC;
+}
+
+.performance__form {
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+}
+.performance__link {
+  color: #06BBCC;
+  font-size: 20px;
+  font-weight: 500;
+}
+.performance__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.performance__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 44px;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+.performance__item:last-child {
+  white-space: pre-wrap;
+}
+.performance__input {
+  width: 100%;
+  border: 1px solid #eaeaea;
+  text-align: center;
+}
+.subjects__item {
+  margin: 10px 0px 10px 10px;
+}
+.subjects__link {
+  color: #06BBCC;
+  font-size: 22px;
+  font-weight: 500;
+}
+.subjects__link:hover {
+  text-decoration: underline;
 }

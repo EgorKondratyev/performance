@@ -9,6 +9,7 @@
   position: relative;
   color: #fff;
   background-color: #06BBCC;
+  margin: 0px 0px 10px 0px;
   padding: 6px 40px;
   border-radius: 10px;
   font-size: 16px;
@@ -199,7 +200,7 @@
 
   &__logo {
     font-size: 22px;
-    
+
     font-weight: 500;
     z-index: 2;
   }
@@ -356,14 +357,6 @@
   }
 }
 
-.content {
-  &__block {
-    margin: 10vh 0px 0px 0px;
-    max-height: 90vh;
-    overflow: hidden;
-  }
-}
-
 .main {
 
   &__slider {
@@ -377,6 +370,7 @@
 
   &__slide-img {
     max-height: 800px;
+
     img {
       width: 100%;
     }
@@ -394,4 +388,112 @@
     text-align: center;
   }
 
+}
+
+.content {
+  &__block {
+    margin: 10vh 0px 0px 0px;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+}
+
+.groups {
+
+  &__block {}
+
+  &__row {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    flex: 1 1 1/6*100%;
+    text-align: center;
+
+    font-size: 18px;
+    padding: 10px 0px;
+    border-bottom: 1px solid #000;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: #000;
+    }
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: #06BBCC;
+  }
+}
+
+.performance {
+
+  &__form {
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+  }
+
+  &__link {
+    color: #06BBCC;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__body {}
+
+  &__row {
+    display: flex;
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    max-width: 44px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+
+    &:last-child {
+      white-space: pre-wrap;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid #eaeaea;
+    text-align: center;
+  }
+
+  &__btn {}
+}
+
+.subjects {
+
+  &__item {
+    margin: 10px 0px 10px 10px;
+  }
+
+  &__link {
+    color: #06BBCC;
+    font-size: 22px;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

@@ -2,32 +2,32 @@
 {% load main %}
 
 {% block content %}
-    <div class="content__block">
-        <table>
-            <tr>
-                <td>№</td>
-                <td>Название группы</td>
-                <td>Форма обучения</td>
-                <td>Курс</td>
-                <td>Специальность</td>
-                <td>Количество изучаемых предметов</td>
-                <td>Количество студентов в группе</td>
-            </tr>
-            {% for group in groups %}
-                <tr>
-                    <td><a href="{{ group.get_absolute_url }}">
-                        {{ forloop.counter }}
-                    </a></td>
-                    <td><a href="{{ group.get_absolute_url }}">
-                        {{ group.speciality.abbreviated_name }}-{{ group.course }}
-                    </a></td>
-                    <td>{{ group.get_form_of_education_display }}</td>
-                    <td>{{ group.course }}</td>
-                    <td>{{ group.speciality }}</td>
-                    <td>{% get_amount_subject_in_group group %}</td>
-                    <td>{% get_amount_student_in_group group %}</td>
-                </tr>
-            {% endfor %}
-        </table>
+<div class="content__block">
+  <div class="groups__block">
+    <div class="groups__row">
+      <div class="groups__item">№</div>
+      <div class="groups__item">Название группы</div>
+      <div class="groups__item">Форма обучения</div>
+      <div class="groups__item">Курс</div>
+      <div class="groups__item">Специальность</div>
+      <div class="groups__item">Количество изучаемых предметов</div>
+      <div class="groups__item">Количество студентов в группе</div>
     </div>
+    {% for group in groups %}
+    <div class="groups__row">
+      <div class="groups__item">
+        <a class="groups__link" href="{{ group.get_absolute_url }}">{{ forloop.counter }}</a>
+      </div>
+      <div class="groups__item">
+        <a class="groups__link" href="{{ group.get_absolute_url }}">{{ group.speciality.abbreviated_name }}-{{ group.course }}</a>
+      </div>
+      <div class="groups__item">{{ group.get_form_of_education_display }}</div>
+      <div class="groups__item">{{ group.course }}</div>
+      <div class="groups__item">{{ group.speciality }}</div>
+      <div class="groups__item">{% get_amount_subject_in_group group %}</div>
+      <div class="groups__item">{% get_amount_student_in_group group %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

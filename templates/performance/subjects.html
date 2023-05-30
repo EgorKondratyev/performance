@@ -4,8 +4,8 @@
     <div class="content__block">
     <ul>
         {% for subject in subjects %}
-            <li>
-                <a href="{% get_absolute_url_subject subject group_id %}">{{ subject.name }}</a>
+            <li class="subjects__item">
+                <a class="subjects__link" href="{% get_absolute_url_subject subject group_id %}">{{ subject.name }}</a>
             </li>
         {% endfor %}
     </ul>
