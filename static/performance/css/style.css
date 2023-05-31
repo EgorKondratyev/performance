@@ -559,3 +559,19 @@ input[type=number] {
 .subjects__link:hover {
   text-decoration: underline;
 }
+
+.students__block {
+  margin: 20px 0px 0px 0px;
+}
+.students__body {
+  overflow: auto;
+  padding: 10px 5vw;
+}
+.students__item {
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
+}
+.students__end {
+  margin: 0px 0px 20px 0px;
+  border-bottom: 2px solid #efefef;
+}

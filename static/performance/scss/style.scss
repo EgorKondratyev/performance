@@ -497,3 +497,25 @@
     }
   }
 }
+
+.students {
+
+  &__block {
+    margin: 20px 0px 0px 0px;
+  }
+
+  &__body {
+    overflow: auto;
+    padding: 10px 5vw;
+  }
+
+  &__item {
+    margin: 0px 0px 10px 0px;
+    font-size: 20px;
+  }
+
+  &__end {
+    margin: 0px 0px 20px 0px;
+    border-bottom: 2px solid #efefef;
+  }
+}
